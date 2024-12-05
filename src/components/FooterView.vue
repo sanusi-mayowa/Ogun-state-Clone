@@ -3,7 +3,7 @@
     <div class="footer-map position-relative">
       <h2 class="text-map">OMO OGUN - ISEYA</h2>
     </div>
-    <section class="bg-footer px-7">
+    <section class="bg-footer px-11">
       <v-row class="pt-10">
         <v-col cols="12" md="7">
           <div>
@@ -88,3 +88,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+@media (max-width: 500px) {
+  .bg-footer.px-11 {
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+  }
+}
+</style>

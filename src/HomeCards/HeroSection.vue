@@ -1,7 +1,7 @@
 <template>
   <v-carousel
     cycle
-    interval="5000"
+    interval="7000"
     show-arrows="hover"
     hide-delimiters
     style="height: 600px !important"

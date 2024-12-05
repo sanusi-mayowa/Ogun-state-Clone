@@ -91,9 +91,8 @@
           <v-menu transition="slide-x-transition" flat>
             <template v-slot:activator="{ props }">
               <v-btn class="bg-primary rounded-pill" v-bind="props">
-                https://www.figma.com/design/zimDNknHxW7sP0Ulrugy4P/OGUN-STATE-WEBSITE-REDESIGN?node-id=1-3&node-type=canvas&t=BsNMQFOqE4fGV1aD-0
-                Quick Links
-              </v-btn>
+                Quick Links</v-btn
+              >
             </template>
             <v-list>
               <v-list-item

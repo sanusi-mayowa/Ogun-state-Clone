@@ -4,9 +4,11 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+  transition: 0.3s ease;
 }
 body {
   font-family: "Poppins", sans-serif;
+  overflow: hidden !important;
 }
 #app {
   overflow-x: hidden !important;
@@ -26,16 +28,28 @@ body {
   position: relative;
   font-weight: 500;
   overflow: initial !important;
+  transition: all 0.3s linear !important;
+}
+.v-list-item-title.text-black:hover {
+  color: #2c9960 !important;
+}
+.v-list-item-title.text-black {
+  position: relative;
 }
 .active-link .text-black::after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 3px;
-  border-radius: 4px;
+  height: 6px;
+  /* border-radius: 4px 4px 0 0; */
   background: #2c9960 !important;
+  /* bottom: -23px; */
   bottom: -10px;
+  border-radius: 4px;
   left: 0;
+}
+.active-link:hover {
+  color: #2c9960 !important;
 }
 .v-list {
   overflow: initial !important;
@@ -183,6 +197,21 @@ body {
   width: 100%;
   height: 100%;
 }
+.ratings-section {
+  background-image: url(/assets/ratings.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 300px;
+  display: flex;
+  align-items: center !important;
+  justify-content: space-evenly;
+  width: 100%;
+}
+@media (max-width: 1400px) {
+  .ratings-section {
+    min-height: 250px;
+  }
+}
 @media (max-width: 1320px) {
   .bottomcarousel-details {
     top: 100px;
@@ -191,10 +220,20 @@ body {
     font-size: 30px !important;
   }
 }
+@media (max-width: 1170px) {
+  .ratings-section {
+    min-height: 230px;
+  }
+}
 /* ============ 1238px ============= */
 @media (max-width: 1238px) {
   .excutives-details.w-50 {
     width: 100% !important;
+  }
+  .speech-row img {
+    /* display: block !important; */
+    width: 100% !important;
+    height: 100% !important;
   }
 }
 /* ============ 1120px ============= */
@@ -212,11 +251,21 @@ body {
   .carousel-details h1.text-h1 {
     font-size: 3.5rem !important;
   }
+  .awolowo-img,
+  .cultural-img {
+    width: 100% !important;
+  }
+  .ratings-section {
+    min-height: 200px;
+  }
 }
 /* ============ 904px ============= */
 @media (max-width: 904px) {
   .w-50.carousel-details {
     width: 80% !important;
+  }
+  .mt-16.commited.pt-16 {
+    margin-top: 0px !important;
   }
 }
 /* ============ 900px ============= */
@@ -239,6 +288,9 @@ body {
 }
 /* ============ 959px ============= */
 @media (max-width: 959px) {
+  .ratings-section {
+    min-height: 199px !important;
+  }
 }
 /* ============ 786px ============= */
 @media (max-width: 768px) {
@@ -305,9 +357,26 @@ body {
     margin-left: 5px !important;
     margin-right: 5px !important;
   }
-  .px-11.bg-history {
+  .px-11.bg-history,
+  .speech.px-13 {
     padding-right: 5px !important;
     padding-left: 5px !important;
+  }
+  .ratings-section {
+    background: url("/assets/ratings-mobile.png") no-repeat center center;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+  }
+  .ratings-description.d-flex {
+    display: block !important;
+    gap: 20px !important;
+  }
+  .rating-item {
+    margin-top: 50px;
+  }
+  .rating-item.last {
+    margin-bottom: 50px;
   }
 }
 @media (max-width: 550px) {
@@ -346,6 +415,16 @@ body {
   }
   .footer-map {
     margin-bottom: -8.8rem;
+  }
+  .text-role {
+    font-size: 20px !important;
+    text-align: center;
+  }
+  .speech.mt-16 {
+    margin-top: 5px !important;
+  }
+  .text-h3.governor-speech {
+    font-size: 30px !important;
   }
 }
 @media (max-width: 500px) {
@@ -393,6 +472,9 @@ body {
   }
   .meet {
     font-size: 13px;
+  }
+  .text-role {
+    font-size: 15px !important;
   }
 }
 @media (max-width: 320px) {
