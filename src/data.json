@@ -1,0 +1,154 @@
+{
+  "links": [
+    {
+      "id": 1,
+      "text": "Home",
+      "to": "/"
+    },
+    {
+      "id": 2,
+      "text": "Services",
+      "to": "/services"
+    },
+    {
+      "id": 3,
+      "text": "News",
+      "to": "/news"
+    },
+    {
+      "id": 4,
+      "text": "About",
+      "to": "/about"
+    }
+  ],
+  "quickLinks": [
+    {
+      "id": 1,
+      "title": "Government",
+      "to": "/government"
+    },
+    {
+      "id": 2,
+      "title": "MDA",
+      "to": "/mda"
+    },
+    {
+      "id": 3,
+      "title": "Executives",
+      "to": "/executives"
+    },
+    {
+      "id": 4,
+      "title": "Emergency No",
+      "to": "/emergency"
+    }
+  ],
+  "Topcarousels": [
+    {
+      "id": 1,
+      "img": "/assets/top-carousel-1.png",
+      "name": "Our",
+      "name2": "Heritage",
+      "description": "Ogun State is predominantly Yoruba, with the Yoruba language serving as the lingua franca of the state. The dominant religions in Ogun State are Islam and Christianity although a certain amount of traditional religion is still practiced. Ogun State is noted for being the almost exclusive site of Ofada rice production."
+    },
+    {
+      "id": 2,
+      "img": "/assets/top-carousel-2.png",
+      "name": "The Gateway",
+      "name2": "State",
+      "description": "Ogun State was created on the 3rd of February, 1976. It was carved out of the old Western State of Nigeria and named after the Ogun River which runs across it from North to South."
+    },
+    {
+      "id": 3,
+      "img": "/assets/top-carousel-3.png",
+      "name": "Our",
+      "name2": "Culture",
+      "description": "Some of the well known festivals are:Egungun, Agemo, Igunnuko, Ogun, Orisa-Oko, Gelede, Eyo, Oro, Ifa, Sango, Obatala, Osun and Akoogun"
+    },
+    {
+      "id": 4,
+      "img": "/assets/top-carousel-4.png",
+      "name": "Our",
+      "name2": "People",
+      "description": "It is people predominantly by the Egbas, Ijebus, Yewas, Remos and Aworis; - who belong to the main Yoruba ethnic group.  It also has sub-groups, namely, Ketu, Ikale, Ilaje, Ohori, Anago and Egun. There are also significant numbers of Nigerians from other parts of the country as well as foreign nationals resident in the State."
+    }
+  ],
+  "executives": [
+    {
+      "id": 1,
+      "img": "/assets/executives1.png",
+      "name": "Dapo Abiodun",
+      "title": "State Governor"
+    },
+    {
+      "id": 2,
+      "img": "/assets/executives2.png",
+      "name": "Noimot Salako",
+      "title": "Deputy Governor"
+    },
+    {
+      "id": 3,
+      "img": "/assets/executives3.png",
+      "name": "Prof. Arigbabu",
+      "title": "Com.of Education"
+    }
+  ],
+  "sectors": [
+    {
+      "id": 1,
+      "img": "assets/sectors1.jpg",
+      "name": "Agriculture"
+    },
+    {
+      "id": 2,
+      "img": "assets/sectors2.jpg",
+      "name": "Agriculture"
+    },
+    {
+      "id": 3,
+      "img": "assets/sectors3.jpg",
+      "name": "Real Estate"
+    },
+    {
+      "id": 4,
+      "img": "assets/sectors4.jpg",
+      "name": "Education"
+    },
+    {
+      "id": 5,
+      "img": "assets/sectors5.jpg",
+      "name": "Logistics"
+    },
+    {
+      "id": 6,
+      "img": "assets/sectors6.jpg",
+      "name": "Solid Minerals"
+    }
+  ],
+  "bottomcarousels": [
+    {
+      "id": 1,
+      "img": "/assets/bottom-carousel1.png"
+    },
+    {
+      "id": 2,
+      "img": "/assets/bottom-carousel2.png"
+    },
+    {
+      "id": 3,
+      "img": "/assets/bottom-carousel3.png"
+    },
+    {
+      "id": 4,
+      "img": "/assets/bottom-carousel4.png"
+    },
+    {
+      "id": 5,
+      "img": "/assets/bottom-carousel5.png"
+    },
+    {
+      "id": 6,
+      "img": "/assets/bottom-carousel6.png"
+    }
+  ]
+}
