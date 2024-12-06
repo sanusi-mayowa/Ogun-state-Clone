@@ -212,7 +212,7 @@ body {
   font-size: clamp(1rem, 4vw + 1rem, 2.5rem);
   font-weight: 500;
 }
-.open-government p,
+.dapo-executives .open-government p,
 .the-push {
   font-size: 16px;
   line-height: 1.8;
@@ -283,6 +283,41 @@ body {
   background: url("/assets/Procurement.png") no-repeat center center;
   background-size: cover;
   height: 100vh;
+}
+.emergency h2 {
+  font-size: clamp(1rem, 1vw + 1rem, 2.2rem);
+  font-weight: 600;
+}
+.emergency p {
+  font-size: 18px;
+}
+.department-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+.department-details p {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.department-details span {
+  font-size: 15px;
+  font-weight: 300;
+}
+.department-col .v-card {
+  height: 100%;
+  min-height: 400px !important;
+}
+/* ============ executives =============== */
+.dapo-executives h2 {
+  font-size: clamp(1rem, 1vw + 1rem, 3rem);
+  font-weight: 500;
+}
+.dapo-speech-description h2 {
+  font-size: 3rem !important;
+}
+.council {
+  font-size: 35px;
 }
 @media (max-width: 1260px) and (min-width: 960px) {
   .des.px-10 {
@@ -475,7 +510,9 @@ body {
   .government-hero-section .px-12,
   .bills-row.px-12,
   .inner-finacial.px-15,
-  .public-section.px-15 {
+  .public-section.px-15,
+  .emergency-department.px-15,
+  .executives-hero-section.px-13 {
     padding-right: 16px !important;
     padding-left: 16px !important;
   }
@@ -531,6 +568,9 @@ body {
     padding-right: 0px !important;
     padding-left: 0px !important;
   }
+  .dapo-speech-description h2 {
+    font-size: 20px !important;
+  }
 }
 @media (max-width: 500px) {
   .px-12.ex-main,
@@ -568,6 +608,13 @@ body {
   }
   .footer-map {
     margin-bottom: -9.1rem;
+  }
+  .department-details.px-10 {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+  .department-details p {
+    font-size: 15px;
   }
 }
 /* ============ 370px ============= */
