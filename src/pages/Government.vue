@@ -83,7 +83,7 @@
     </div>
     <div class="state-budget py-10">
       <div
-        class="state-budget-inner text-center d-flex align-center justify-center flex-column"
+        class="state-budget-inner text-center h-100 d-flex align-center justify-center flex-column"
       >
         <h2 class="text-primary text-capitalize pt-16 mb-16">state budget</h2>
         <div class="budget-img">
@@ -92,7 +92,7 @@
         <h2 class="text-primary mt-16 text-capitalize">
           ministry of budget and planning documents
         </h2>
-        <p class="pb-10 mt-5 text-map" style="font-size: 20px">
+        <p class="pb-10 mt-5 text-map text-capitalize" style="font-size: 20px">
           MTEF report, budget assessments, Etc.
         </p>
       </div>
@@ -127,11 +127,48 @@
         </div>
       </div>
     </div>
-    <div class="public-section bg-white">
+    <div class="public-section bg-white px-15 pb-10">
       <div class="public-inner d-flex justify-center align-center">
         <h2 class="public text-capitalize px-6 py-1 text-primary mt-16">
           public data-bureau of statictics
         </h2>
+      </div>
+      <div
+        class="public-col mt-8"
+        v-for="publicItem in publicItems"
+        :key="publicItem"
+      >
+        <div class="d-flex align-center ga-6 financial-inner py-5 px-8">
+          <div
+            class="financial-img bg-primary d-flex align-center justify-center"
+          >
+            <img width="40" :src="publicItem.img" alt="" />
+          </div>
+          <div class="">
+            <h2 class="text-capitalize text-primary">{{ publicItem.title }}</h2>
+            <p class="text-capitalize text-primary">
+              {{ publicItem.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="state-budget procurement py-10">
+      <div
+        class="state-budget-inner text-center d-flex align-center justify-center flex-column h-100"
+        style="width: 94vw; margin: 0 auto"
+      >
+        <h2 class="text-primary text-capitalize pt-16 mb-16">procurement</h2>
+        <div class="budget-img">
+          <img width="40" src="/assets/billsandlaw1.png" alt="" />
+        </div>
+        <h2 class="text-primary mt-16 text-capitalize">
+          bureau of public procurement
+        </h2>
+        <p class="pb-10 mt-5 text-map text-capitalize" style="font-size: 20px">
+          contracts, tender, public procurement, and etc.
+        </p>
       </div>
     </div>
   </section>
@@ -145,6 +182,7 @@ export default {
       openGovernments: data.openGovernments,
       billsandGates: data.billsandGates,
       financials: data.financials,
+      publicItems: data.publicItems,
     };
   },
 };

@@ -50,7 +50,7 @@
     </v-app-bar>
   </div>
   <div class="tabletnav">
-    <v-app-bar class="bg-red navbar" flat>
+    <v-app-bar class="bg-white navbar" flat>
       <div
         class="small-nav d-flex align-center justify-space-between w-100 px-8"
       >

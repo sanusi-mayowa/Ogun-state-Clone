@@ -216,5 +216,25 @@
       "title": "local government financial reports",
       "description": "an open repository ogun’s expenditures"
     }
+  ],
+  "publicItems": [
+    {
+      "id": 1,
+      "img": "/assets/billsandlaw1.png",
+      "title": "search state online publications",
+      "description": "search the state database for written publications, case studies, keynote speeches, etc on area of interest within ogun state"
+    },
+    {
+      "id": 2,
+      "img": "/assets/billsandlaw2.png",
+      "title": "state statistics annual report",
+      "description": "lookup ogun’s annual reports"
+    },
+    {
+      "id": 3,
+      "img": "/assets/billsandlaw3.png",
+      "title": "statistical releases",
+      "description": "ogun provide open access to a publicly available dataset, maps and statistics"
+    }
   ]
 }
