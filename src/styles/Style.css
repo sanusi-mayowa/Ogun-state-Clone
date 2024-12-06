@@ -319,6 +319,13 @@ body {
 .council {
   font-size: 35px;
 }
+.v-pagination .v-btn {
+  border-radius: 50% !important;
+}
+.v-pagination__item--active {
+  background-color: green !important;
+  color: white !important;
+  }
 @media (max-width: 1260px) and (min-width: 960px) {
   .des.px-10 {
     font-size: 15px !important;
