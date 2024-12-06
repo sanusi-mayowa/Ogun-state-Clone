@@ -13,6 +13,8 @@ export default createVuetify({
           footer: "#343A40",
           map: "#333333",
           history: "#FaFFF2",
+          financial: "#008747",
+          light: "#F5F5F5",
         },
       },
     },

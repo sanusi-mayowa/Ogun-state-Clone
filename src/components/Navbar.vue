@@ -39,7 +39,9 @@
                 :to="quickLink.to"
                 :class="{ 'active-link links': $route.path === quickLink.to }"
               >
-                <v-list-item-title>{{ quickLink.title }}</v-list-item-title>
+                <v-list-item-title class="text-black">{{
+                  quickLink.title
+                }}</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -48,7 +50,7 @@
     </v-app-bar>
   </div>
   <div class="tabletnav">
-    <v-app-bar class="bg-white navbar" flat>
+    <v-app-bar class="bg-red navbar" flat>
       <div
         class="small-nav d-flex align-center justify-space-between w-100 px-8"
       >

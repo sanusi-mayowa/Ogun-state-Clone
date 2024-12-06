@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/pages/Home.vue";
 import News from "@/pages/News.vue";
 import AboutPage from "@/pages/About.vue";
+import GovernmentPage from "@/pages/Government.vue"
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     name: "AboutPage",
     component: AboutPage,
   },
+  {
+    path: "/government",
+    name: "GovernmentPage",
+    component: GovernmentPage 
+  }
 ];
 
 const router = createRouter({
