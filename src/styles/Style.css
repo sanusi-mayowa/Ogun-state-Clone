@@ -325,7 +325,29 @@ body {
 .v-pagination__item--active {
   background-color: green !important;
   color: white !important;
-  }
+}
+/* ========== News ====== */
+.news h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.bg-primary.select {
+  opacity: 0.5 !important;
+}
+.news-hero-section-description {
+  bottom: 30px;
+  left: 20px;
+}
+.news-hero-section-description h1 {
+  font-size: 37px;
+}
+.news-hero-section-description p {
+  font-size: 18px;
+}
+.latest.position-absolute {
+  top: 20px;
+  left: 10px;
+}
 @media (max-width: 1260px) and (min-width: 960px) {
   .des.px-10 {
     font-size: 15px !important;
@@ -384,6 +406,12 @@ body {
   }
   .ratings-section {
     min-height: 200px;
+  }
+  .news-hero-section-description h1 {
+    font-size: 20px;
+  }
+  .news-hero-section-description p {
+    font-size: 14px;
   }
 }
 /* ============ 904px ============= */
@@ -519,9 +547,16 @@ body {
   .inner-finacial.px-15,
   .public-section.px-15,
   .emergency-department.px-15,
-  .executives-hero-section.px-13 {
+  .executives-hero-section.px-13,
+  .news-hero-section.px-15 {
     padding-right: 16px !important;
     padding-left: 16px !important;
+  }
+  .news-hero-section-description h1 {
+    font-size: 15px;
+  }
+  .news-hero-section-description p {
+    font-size: 12px;
   }
 }
 @media (max-width: 550px) {
@@ -585,6 +620,12 @@ body {
     padding-right: 10px !important;
     padding-left: 10px !important;
   }
+  .news-hero-section-description h1 {
+    font-size: 10px;
+  }
+  .news-hero-section-description p {
+    font-size: 8px;
+  }
 }
 @media (max-width: 375px) {
   .text-h2.about-state {
@@ -622,6 +663,9 @@ body {
   }
   .department-details p {
     font-size: 15px;
+  }
+  .news-hero-section-description p {
+    display: none;
   }
 }
 /* ============ 370px ============= */

@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/pages/Home.vue";
-import News from "@/pages/News.vue";
+import NewsPage from "@/pages/News.vue";
 import AboutPage from "@/pages/About.vue";
 import GovernmentPage from "@/pages/Government.vue";
 import EmergencyPage from "@/pages/Emergency.vue";
 import ExecutivesPage from "@/pages/Executives.vue";
-
+import NewsDetail from "@/pages/NewsDetail";
+// import ReadMore from "@/pages/Readmore.vue";
 const routes = [
   {
     path: "/",
@@ -14,8 +15,8 @@ const routes = [
   },
   {
     path: "/news",
-    name: "News",
-    component: News,
+    name: "NewsPage",
+    component: NewsPage,
   },
   {
     path: "/about",
@@ -37,6 +38,18 @@ const routes = [
     name: "ExecutivesPage",
     component: ExecutivesPage,
   },
+  {
+    path: "/news/:url",
+    name: "NewsDetail",
+    component: NewsDetail,
+    props: true,
+  },
+  // {
+  //   path: "/read-more/:id",
+  //   name: "ReadMore",
+  //   component: ReadMore,
+  //   props: true, // This allows passing the route params as props to the component
+  // },
 ];
 
 const router = createRouter({

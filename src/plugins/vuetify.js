@@ -15,6 +15,7 @@ export default createVuetify({
           history: "#FaFFF2",
           financial: "#008747",
           light: "#F5F5F5",
+          select: "#006400"
         },
       },
     },
