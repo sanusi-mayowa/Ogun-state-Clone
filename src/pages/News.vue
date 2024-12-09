@@ -140,8 +140,6 @@
 
 <script>
 import axios from "axios";
-import data from "@/data.json";
-
 export default {
   name: "NewsPage",
   data() {
