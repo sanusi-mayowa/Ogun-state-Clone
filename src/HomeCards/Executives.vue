@@ -53,12 +53,30 @@
   </section>
 </template>
 <script>
-import data from "@/data.json";
 export default {
   name: "Executives",
   data() {
     return {
-      executives: data.executives,
+      executives: [
+        {
+          id: 1,
+          img: "/assets/executives1.png",
+          name: "Dapo Abiodun",
+          title: "State Governor",
+        },
+        {
+          id: 2,
+          img: "/assets/executives2.png",
+          name: "Noimot Salako",
+          title: "Deputy Governor",
+        },
+        {
+          id: 3,
+          img: "/assets/executives3.png",
+          name: "Prof. Arigbabu",
+          title: "Com.of Education",
+        },
+      ],
     };
   },
 };

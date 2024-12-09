@@ -34,13 +34,37 @@
 </template>
 
 <script>
-import data from "@/data.json";
 export default {
   name: "BottomCarousel",
   data() {
     return {
-      bottomcarousels: data.bottomcarousels,
-      carouselIndex: 0, // Bind to track carousel index
+      bottomcarousels: [
+        {
+          id: 1,
+          img: "/assets/bottom-carousel1.png",
+        },
+        {
+          id: 2,
+          img: "/assets/bottom-carousel2.png",
+        },
+        {
+          id: 3,
+          img: "/assets/bottom-carousel3.png",
+        },
+        {
+          id: 4,
+          img: "/assets/bottom-carousel4.png",
+        },
+        {
+          id: 5,
+          img: "/assets/bottom-carousel5.png",
+        },
+        {
+          id: 6,
+          img: "/assets/bottom-carousel6.png",
+        },
+      ],
+      carouselIndex: 0,
     };
   },
 };

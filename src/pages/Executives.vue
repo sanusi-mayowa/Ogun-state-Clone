@@ -95,16 +95,88 @@
   </section>
 </template>
 <script>
-import data from "@/data.json";
-
 export default {
   name: "ExecutivesPage",
   data() {
     return {
       commissionerPage: 1,
       commissionersPerPage: 6,
-      executiveCouncils: data.executiveCouncils,
-      Commissioners: data.Commissioners,
+      executiveCouncils: [
+        {
+          id: 1,
+          img: "/assets/council1.png",
+          name: "Noimot Salako-Oyedele",
+          description: "Deputy Governor of Ogun-State",
+        },
+        {
+          id: 2,
+          img: "/assets/council2.png",
+          name: "Tokunbo Talabi",
+          description: "Secretary to the State Government",
+        },
+        {
+          id: 3,
+          img: "/assets/council3.png",
+          name: "Shuaib Salisu",
+          description: "Chief of Staff of Ogun-State",
+        },
+      ],
+      Commissioners: [
+        {
+          id: 1,
+          img: "/assets/commissoner1.png",
+          name: "Dapo Okubadejo",
+          description: "COMMISSIONER, Ministry of Finance",
+        },
+        {
+          id: 2,
+          img: "/assets/commissoner2.png",
+          name: "Dr. Tomi Coker",
+          description: "COMMISSIONER, Ministry of Health",
+        },
+        {
+          id: 3,
+          img: "/assets/commissoner3.png",
+          name: "Prof. Abayomi Arigbabu",
+          description: "COMMISSIONER, Ministry of Education",
+        },
+        {
+          id: 4,
+          img: "/assets/commissoner4.png",
+          name: "Engr. Taiwo Oludotun",
+          description: "COMMISSIONER, Ministry of Forestry",
+        },
+        {
+          id: 5,
+          img: "/assets/commissoner5.png",
+          name: "Mr. Ola Oresanya",
+          description: "COMMISSIONER, Ministry of Environment",
+        },
+        {
+          id: 6,
+          img: "/assets/commissoner6.png",
+          name: "Mr. Olaolu Olabimtan",
+          description: "COMMISSIONER, Ministry of Budget and Planning",
+        },
+        {
+          id: 7,
+          img: "/assets/commissoner6.png",
+          name: "Mr. Olaolu Olabimtan",
+          description: "COMMISSIONER, Ministry of Budget and Planning",
+        },
+        {
+          id: 8,
+          img: "/assets/commissoner5.png",
+          name: "Mr. Ola Oresanya",
+          description: "COMMISSIONER, Ministry of Environment",
+        },
+        {
+          id: 9,
+          img: "/assets/commissoner4.png",
+          name: "Engr. Taiwo Oludotun",
+          description: "COMMISSIONER, Ministry of Forestry",
+        },
+      ],
     };
   },
   computed: {

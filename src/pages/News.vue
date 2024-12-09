@@ -5,6 +5,7 @@
       <p>Explore recent developments, News, in Ogun State</p>
       <div class="border-black border mt-3 w-100"></div>
     </div>
+
     <div class="news-hero-section px-15">
       <div class="update d-flex align-center justify-space-between w-100 mt-5">
         <div>
@@ -22,17 +23,18 @@
                 class="text-black"
                 v-for="option in options"
                 :key="option"
+                @click="setCategory(option)"
               >
-                <v-list-item-title class="text-black text-center">{{
-                  option.text
-                }}</v-list-item-title>
+                <v-list-item-title class="text-black text-center">
+                  {{ option.text }}
+                </v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
         </div>
       </div>
 
-      <!-- Loading state -->
+      <!-- Loading State -->
       <div
         v-if="loading"
         class="d-flex justify-center ga-10 align-center"
@@ -45,27 +47,30 @@
         <div class="font-weight-bold">Fetching News</div>
       </div>
 
-      <!-- Content after data is loaded -->
-      <div v-else class="news-hero-section-inner position-relative mt-5">
+      <!-- Hero Section -->
+      <div
+        v-else-if="newsItems.length > 0"
+        class="news-hero-section-inner position-relative mt-5"
+      >
         <img
-          src="/assets/newssection.png"
+          :src="newsItems[0].urlToImage || '/assets/newssection.png'"
           width="100%"
           class="rounded-xl"
-          alt=""
+          alt="News Hero"
         />
         <div class="news-hero-section-description position-absolute text-white">
-          <span class="text-grey">March 29, 2023</span>
+          <span class="text-grey">
+            {{
+              newsItems[0].publishedAt
+                ? new Date(newsItems[0].publishedAt).toLocaleDateString()
+                : "Unknown Date"
+            }}
+          </span>
           <h1 class="w-75 mt-2">
-            Replacing Stomach Infrastructure with Project Infrastructure,
-            Sujimoto Congratulates Prince Dapo Abiodun, Ogun State Governor
-            Re-elect
+            {{ newsItems[0].title || "No Title Available" }}
           </h1>
           <p class="mt-3">
-            The journey to Prince Dapo Abiodun’s re-election as Governor of Ogun
-            State was a tumultuous one, marked by internal and external
-            political strife. ‘However, despite the challenges, I was eager to
-            make the trip down to Ogun State to congratulate my egbon and mentor
-            in person.’
+            {{ newsItems[0].description || "No description available." }}
           </p>
         </div>
       </div>
@@ -88,14 +93,22 @@
               :src="item.urlToImage || '/assets/news.png'"
               width="100%"
               height="100%"
-              alt=""
+              alt="News Image"
             />
             <div class="news-details px-5">
-              <span class="date text-grey my-2 d-block">{{
-                new Date(item.publishedAt).toLocaleDateString()
-              }}</span>
-              <h1 class="news-title mb-2">{{ item.title }}</h1>
-              <p class="news-description">{{ item.description }}</p>
+              <span class="date text-grey my-2 d-block">
+                {{
+                  item.publishedAt
+                    ? new Date(item.publishedAt).toLocaleDateString()
+                    : "Unknown Date"
+                }}
+              </span>
+              <h1 class="news-title mb-2">
+                {{ item.title || "Untitled News" }}
+              </h1>
+              <p class="news-description">
+                {{ item.description || "No description available." }}
+              </p>
               <div class="route mt-2">
                 <router-link
                   :to="{ name: 'NewsDetail', params: { url: item.url } }"
@@ -112,10 +125,11 @@
         </v-col>
       </v-row>
 
-      <!-- Vuetify Pagination Component -->
+      <!-- Pagination -->
       <v-pagination
+        v-if="totalResults > 0"
         v-model="currentPage"
-        :length="Math.ceil(totalResults / pageSize)"
+        :length="Math.ceil(totalResults / 6)"
         :total-visible="5"
         @input="fetchNews"
         class="d-flex justify-center mt-5"
@@ -123,6 +137,7 @@
     </div>
   </section>
 </template>
+
 <script>
 import axios from "axios";
 import data from "@/data.json";
@@ -131,46 +146,74 @@ export default {
   name: "NewsPage",
   data() {
     return {
-      options: data.options,
-      newsItems: [],
-      loading: true,
-      currentPage: 1,
-      totalResults: 0,
-      pageSize: 6,
+      options: [
+        {
+          id: 1,
+          text: "Sport",
+        },
+        {
+          id: 1,
+          text: "Sport",
+        },
+        {
+          id: 1,
+          text: "Sport",
+        },
+      ],
+      newsItems: [], // Fetched news articles
+      loading: true, // Loading state
+      currentPage: 1, // Current page
+      totalResults: 0, // Total results from API
+      pageSize: 6, // Number of articles per page
     };
   },
   created() {
-    this.fetchNews();
+    this.fetchNews(); // Fetch news on page load
   },
   watch: {
     currentPage(newPage) {
-      this.fetchNews();
+      this.fetchNews(); // Refetch news when page changes
     },
   },
   methods: {
-    async fetchNews() {
+    async fetchNews(category = null) {
       this.loading = true;
       try {
-        const response = await axios.get("https://newsapi.org/v2/everything", {
-          params: {
-            q: "Ogun State",
-            apiKey: "e7b34c559b2e4fb78810c513ef067c5d",
-            language: "en",
-            page: this.currentPage,
-            pageSize: this.pageSize,
-          },
+        const params = {
+          q: category || "Ogun State",
+          apikey: "1c6c55c29c67e0620172e616ad9c5ec2",
+          language: "en",
+          page: this.currentPage,
+        };
+
+        const response = await axios.get("https://api.mediastack.com/v1/news", {
+          params,
         });
-        this.newsItems = response.data.articles;
-        this.totalResults = response.data.totalResults;
-        this.loading = false;
+
+        if (response.data && response.data.results) {
+          this.newsItems = response.data.results;
+          this.totalResults =
+            response.data.totalResults || this.newsItems.length * 5;
+        } else {
+          this.newsItems = [];
+          this.totalResults = 0;
+        }
       } catch (error) {
         console.error("Error fetching news:", error);
+        this.newsItems = [];
+        this.totalResults = 0;
+      } finally {
         this.loading = false;
       }
+    },
+    setCategory(option) {
+      this.currentPage = 1; // Reset to the first page
+      this.fetchNews(option.text); // Fetch news by category
     },
   },
 };
 </script>
+
 <style scoped>
 .news-items img {
   object-fit: cover;

@@ -49,12 +49,42 @@
   </section>
 </template>
 <script>
-import data from "@/data.json";
 export default {
   name: "Sectors",
   data() {
     return {
-      sectors: data.sectors,
+      "sectors": [
+    {
+      "id": 1,
+      "img": "assets/sectors1.jpg",
+      "name": "Agriculture"
+    },
+    {
+      "id": 2,
+      "img": "assets/sectors2.jpg",
+      "name": "Agriculture"
+    },
+    {
+      "id": 3,
+      "img": "assets/sectors3.jpg",
+      "name": "Real Estate"
+    },
+    {
+      "id": 4,
+      "img": "assets/sectors4.jpg",
+      "name": "Education"
+    },
+    {
+      "id": 5,
+      "img": "assets/sectors5.jpg",
+      "name": "Logistics"
+    },
+    {
+      "id": 6,
+      "img": "assets/sectors6.jpg",
+      "name": "Solid Minerals"
+    }
+  ],
     };
   },
 };
