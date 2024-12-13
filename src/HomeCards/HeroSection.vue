@@ -20,8 +20,9 @@
         </h1>
         <p class="text-white mt-3">{{ topcarousel.description }}</p>
         <v-btn
-          class="text-primary d-block mt-5 text-capitalize font-weight-bold"
+          class="text-primary mt-5 text-capitalize font-weight-bold"
           flat
+          to="/mda"
           >Ogun State MDAs</v-btn
         >
       </div>

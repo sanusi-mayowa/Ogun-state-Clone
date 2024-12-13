@@ -5,7 +5,10 @@ import AboutPage from "@/pages/About.vue";
 import GovernmentPage from "@/pages/Government.vue";
 import EmergencyPage from "@/pages/Emergency.vue";
 import ExecutivesPage from "@/pages/Executives.vue";
-import NewsDetail from "@/pages/NewsDetail";
+import MdaPage from "@/pages/Mda.vue";
+import NewsDetail from "@/pages/NewsDetail.vue";
+import MdaEducation from "@/pages/MdaEducation.vue";
+
 // import ReadMore from "@/pages/Readmore.vue";
 const routes = [
   {
@@ -37,6 +40,16 @@ const routes = [
     path: "/executives",
     name: "ExecutivesPage",
     component: ExecutivesPage,
+  },
+  {
+    path: "/mda",
+    name: "MdaPage",
+    component: MdaPage,
+  },
+  {
+    path: "/mdaeducation",
+    name: "MdaEducation",
+    component: MdaEducation,
   },
   {
     path: "/news/:url",

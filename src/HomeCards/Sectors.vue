@@ -41,7 +41,7 @@
         innovation
       </p>
       <div class="position-absolute invest-button text-center">
-        <v-btn class="rounded-pill d-block text-primary" flat
+        <v-btn class="rounded-pill text-primary" flat to="investment"
           >invest in ogun-state</v-btn
         >
       </div>
@@ -53,38 +53,38 @@ export default {
   name: "Sectors",
   data() {
     return {
-      "sectors": [
-    {
-      "id": 1,
-      "img": "assets/sectors1.jpg",
-      "name": "Agriculture"
-    },
-    {
-      "id": 2,
-      "img": "assets/sectors2.jpg",
-      "name": "Agriculture"
-    },
-    {
-      "id": 3,
-      "img": "assets/sectors3.jpg",
-      "name": "Real Estate"
-    },
-    {
-      "id": 4,
-      "img": "assets/sectors4.jpg",
-      "name": "Education"
-    },
-    {
-      "id": 5,
-      "img": "assets/sectors5.jpg",
-      "name": "Logistics"
-    },
-    {
-      "id": 6,
-      "img": "assets/sectors6.jpg",
-      "name": "Solid Minerals"
-    }
-  ],
+      sectors: [
+        {
+          id: 1,
+          img: "assets/sectors1.jpg",
+          name: "Agriculture",
+        },
+        {
+          id: 2,
+          img: "assets/sectors2.jpg",
+          name: "Agriculture",
+        },
+        {
+          id: 3,
+          img: "assets/sectors3.jpg",
+          name: "Real Estate",
+        },
+        {
+          id: 4,
+          img: "assets/sectors4.jpg",
+          name: "Education",
+        },
+        {
+          id: 5,
+          img: "assets/sectors5.jpg",
+          name: "Logistics",
+        },
+        {
+          id: 6,
+          img: "assets/sectors6.jpg",
+          name: "Solid Minerals",
+        },
+      ],
     };
   },
 };

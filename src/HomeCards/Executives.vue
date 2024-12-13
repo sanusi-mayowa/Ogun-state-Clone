@@ -40,10 +40,10 @@
               />
               <div
                 class="excutives-details position-absolute pl-5 py-3 w-50"
-                style="bottom: 27px; background: rgba(255, 255, 255, 0.8)"
+                style="bottom: 26px; background: rgba(255, 255, 255, 0.8)"
               >
-                <h3 class="text-primary">{{ executive.name }}</h3>
-                <h4 class="text-light">{{ executive.title }}</h4>
+                <h3 class="text-title">{{ executive.name }}</h3>
+                <h4 class="text-primary">{{ executive.title }}</h4>
               </div>
             </div>
           </v-col>

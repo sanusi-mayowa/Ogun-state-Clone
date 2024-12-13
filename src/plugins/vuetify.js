@@ -15,7 +15,11 @@ export default createVuetify({
           history: "#FaFFF2",
           financial: "#008747",
           light: "#F5F5F5",
-          select: "#006400"
+          title: "#005322",
+          select: "#006400",
+          mda: "#D9D9D9",
+          mda2: "#027E02",
+          video: "#275A12",
         },
       },
     },

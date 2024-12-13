@@ -77,13 +77,54 @@
   </v-footer>
 </template>
 <script>
-import data from "@/data.json";
 export default {
   name: "FooterView",
   data() {
     return {
-      links: data.links,
-      quickLinks: data.quickLinks,
+      links: [
+        {
+          id: 1,
+          text: "Home",
+          to: "/",
+        },
+        {
+          id: 2,
+          text: "Services",
+          to: "/services",
+        },
+        {
+          id: 3,
+          text: "News",
+          to: "/news",
+        },
+        {
+          id: 4,
+          text: "About",
+          to: "/about",
+        },
+      ],
+      quickLinks: [
+        {
+          id: 1,
+          title: "Government",
+          to: "/government",
+        },
+        {
+          id: 2,
+          title: "MDA",
+          to: "/mda",
+        },
+        {
+          id: 3,
+          title: "Executives",
+          to: "/executives",
+        },
+        {
+          id: 4,
+          title: "Emergency No",
+          to: "/emergency",
+        },
+      ],
     };
   },
 };

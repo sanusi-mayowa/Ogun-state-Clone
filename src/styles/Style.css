@@ -348,6 +348,92 @@ body {
   top: 20px;
   left: 10px;
 }
+/* ========mda page =========== */
+.mda-section {
+  background: url("/assets/mdasection.png") no-repeat center;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  position: relative;
+}
+.mda-section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(31, 90, 31, 0.5);
+}
+.mda-description {
+  position: absolute;
+  left: 50px;
+  bottom: 20%;
+}
+
+/* ==========mda-education page============== */
+.mda-education {
+  background: url("/assets/mda-executives.png") no-repeat center;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+.mda-education::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.mda-education-description .child {
+  z-index: 999 !important;
+  width: 100%;
+  max-width: 1000px !important;
+  margin: 0 auto;
+}
+.mda-education-description .child h1 {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+.mda-education-description .child p {
+  font-size: 18px;
+}
+.mda-cols .v-card {
+  height: 300px !important;
+  object-fit: cover !important;
+}
+.projects-img {
+  position: relative;
+  display: inline-block;
+}
+.projects-img-child {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -6px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.news-top.position-absolute {
+  right: 50px;
+  top: 50px;
+}
+.news2-top {
+  left: 50px;
+  top: 55%;
+}
+.video-section iframe {
+  max-width: 100%;
+  /* height: auto; */
+  display: block;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
 @media (max-width: 1260px) and (min-width: 960px) {
   .des.px-10 {
     font-size: 15px !important;
@@ -548,7 +634,9 @@ body {
   .public-section.px-15,
   .emergency-department.px-15,
   .executives-hero-section.px-13,
-  .news-hero-section.px-15 {
+  .news-hero-section.px-15,
+  .px-15.mda-row,
+  .mda-education-main.px-15 {
     padding-right: 16px !important;
     padding-left: 16px !important;
   }
@@ -558,10 +646,25 @@ body {
   .news-hero-section-description p {
     font-size: 12px;
   }
+  .mda-education-description .child h1 {
+    font-size: 35px;
+  }
+  .mda-education-description .child p {
+    font-size: 15px;
+  }
+  .mda-cols .v-card {
+    height: 100% !important;
+  }
+  .projects-img-description h1 {
+    font-size: 15px !important;
+  }
 }
 @media (max-width: 550px) {
   .bottomcarousel-details h2.text-h3 {
     font-size: 15px !important;
+  }
+  .news2-top {
+    top: 45%;
   }
 }
 @media (max-width: 525px) {
@@ -613,6 +716,22 @@ body {
   .dapo-speech-description h2 {
     font-size: 20px !important;
   }
+  .mda-description {
+    left: 10px;
+  }
+  .mda-description h1.text-h1 {
+    font-size: 50px !important;
+  }
+  .mda-education-description .child h1 {
+    font-size: 25px;
+  }
+  .mda-education-description .child p {
+    font-size: 14px;
+  }
+  .news2-top {
+    top: 35%;
+    left: 20px;
+  }
 }
 @media (max-width: 500px) {
   .px-12.ex-main,
@@ -625,6 +744,9 @@ body {
   }
   .news-hero-section-description p {
     font-size: 8px;
+  }
+  p.text {
+    text-align: justify !important;
   }
 }
 @media (max-width: 375px) {
@@ -679,13 +801,19 @@ body {
   .text-role {
     font-size: 15px !important;
   }
+  .news2-top {
+    top: 30%;
+  }
 }
 @media (max-width: 320px) {
   .footer-map {
     margin-bottom: -9.6rem;
   }
+  .mda-education-description .child p {
+    font-size: 10px;
+  }
 }
-@media (max-width: 300px) {
+/* @media (max-width: 300px) {
   .v-main {
     display: none;
   }
@@ -704,4 +832,4 @@ body {
     justify-content: center;
     font-size: 20px;
   }
-}
+} */
