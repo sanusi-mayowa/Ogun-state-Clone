@@ -1,70 +1,129 @@
 import { createRouter, createWebHistory } from "vue-router";
+import DefaultLayout from "@/Layouts/DefaultLayout.vue";
+import InvestMentLayout from "@/Layouts/InvestMentLayout.vue";
 import HomePage from "@/pages/Home.vue";
+import InvestmentPage from "@/pages/Investment.vue";
 import NewsPage from "@/pages/News.vue";
+import NewsDetail from "@/pages/NewsDetail.vue";
 import AboutPage from "@/pages/About.vue";
 import GovernmentPage from "@/pages/Government.vue";
-import EmergencyPage from "@/pages/Emergency.vue";
-import ExecutivesPage from "@/pages/Executives.vue";
 import MdaPage from "@/pages/Mda.vue";
-import NewsDetail from "@/pages/NewsDetail.vue";
-import MdaEducation from "@/pages/MdaEducation.vue";
+import MdaEducationPage from "@/pages/MdaEducation.vue";
+import ExecutivesPage from "@/pages/Executives.vue";
+import EmergencyPage from "@/pages/Emergency.vue";
 
-// import ReadMore from "@/pages/Readmore.vue";
 const routes = [
   {
     path: "/",
-    name: "HomePage",
-    component: HomePage,
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "HomePage",
+        component: HomePage,
+      },
+    ],
   },
   {
+    path: "/investment",
+    component: InvestMentLayout,
+    children: [
+      {
+        path: "",
+        name: "InvestmentPage",
+        component: InvestmentPage,
+      },
+    ],
+  },
+  // {
+  //   path: "/services",
+  //   component: DefaultLayout,
+  //   children: [
+  //     {
+  //       path: "",
+  //       name: "ServicesPage",
+  //       component: ServicesPage,
+  //     },
+  //   ],
+  // },
+  {
     path: "/news",
-    name: "NewsPage",
-    component: NewsPage,
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "NewsPage",
+        component: NewsPage,
+      },
+    ],
   },
   {
     path: "/about",
-    name: "AboutPage",
-    component: AboutPage,
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "AboutPage",
+        component: AboutPage,
+      },
+    ],
   },
   {
     path: "/government",
-    name: "GovernmentPage",
-    component: GovernmentPage,
-  },
-  {
-    path: "/emergency",
-    name: "EmergencyPage",
-    component: EmergencyPage,
-  },
-  {
-    path: "/executives",
-    name: "ExecutivesPage",
-    component: ExecutivesPage,
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "GovernmentPage",
+        component: GovernmentPage,
+      },
+    ],
   },
   {
     path: "/mda",
-    name: "MdaPage",
-    component: MdaPage,
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "MdaPage",
+        component: MdaPage,
+      },
+    ],
   },
   {
     path: "/mdaeducation",
-    name: "MdaEducation",
-    component: MdaEducation,
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "MdaEducationPage",
+        component: MdaEducationPage,
+      },
+    ],
   },
   {
-    path: "/news/:url",
-    name: "NewsDetail",
-    component: NewsDetail,
-    props: true,
+    path: "/executives",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "ExecutivesPage",
+        component: ExecutivesPage,
+      },
+    ],
   },
-  // {
-  //   path: "/read-more/:id",
-  //   name: "ReadMore",
-  //   component: ReadMore,
-  //   props: true, // This allows passing the route params as props to the component
-  // },
+  {
+    path: "/emergency",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "",
+        name: "EmergencyPage",
+        component: EmergencyPage,
+      },
+    ],
+  },
 ];
-
 const router = createRouter({
   history: createWebHistory(),
   routes,

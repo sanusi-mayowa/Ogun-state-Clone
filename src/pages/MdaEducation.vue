@@ -161,7 +161,7 @@
 </template>
 <script>
 export default {
-  name: "MdaEducation",
+  name: "MdaEducationPage",
   data() {
     return {
       projects: [

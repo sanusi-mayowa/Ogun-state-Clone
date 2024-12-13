@@ -78,6 +78,7 @@ body {
   left: 0;
   right: 0;
   margin: auto;
+  position: fixed !important;
 }
 .home .v-window__controls .v-btn--icon.v-btn--size-default {
   background: #2c9960;

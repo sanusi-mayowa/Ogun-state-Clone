@@ -175,7 +175,7 @@
 </template>
 <script>
 export default {
-  name: "Government",
+  name: "GovernmentPage",
   data() {
     return {
       openGovernments: [

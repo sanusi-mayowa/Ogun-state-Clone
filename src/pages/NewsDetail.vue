@@ -47,7 +47,7 @@
 import axios from "axios";
 
 export default {
-  name: "NewsDetail",
+  name: "NewsDetailPage",
   data() {
     return {
       article: null,
