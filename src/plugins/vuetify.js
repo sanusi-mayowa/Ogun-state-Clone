@@ -20,6 +20,8 @@ export default createVuetify({
           mda: "#D9D9D9",
           mda2: "#027E02",
           video: "#275A12",
+          contact: "#006400",
+          investment: "E7F8E7"
         },
       },
     },

@@ -1,11 +1,11 @@
 <template>
-    <v-app>
-      <router-view></router-view>
-    </v-app>
-  </template>
-  
-  <script>
-  export default {
-    name: "AuthLayout",
-  };
-  </script>
+  <v-app>
+    <router-view></router-view>
+  </v-app>
+</template>
+
+<script>
+export default {
+  name: "InvestmentLayout",
+};
+</script>

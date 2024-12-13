@@ -196,7 +196,7 @@ body {
 }
 .welcome-img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 .ratings-section {
   background-image: url(/assets/ratings.png);
@@ -315,7 +315,7 @@ body {
   font-weight: 500;
 }
 .dapo-speech-description h2 {
-  font-size: 3rem !important;
+  font-size: 1.5rem !important;
 }
 .council {
   font-size: 35px;
@@ -429,11 +429,45 @@ body {
 }
 .video-section iframe {
   max-width: 100%;
-  /* height: auto; */
   display: block;
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
+}
+/* ===== investment page ========= */
+.invest-section {
+  background: url("/assets/investment-section.jpeg");
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+.invest-section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(1, 79, 38, 0.7),
+    rgba(2, 110, 48, 0.7)
+  );
+}
+.invest-section-main {
+  position: relative;
+  max-width: 800px;
+  margin: 1px auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (max-width: 1425px) and (min-width: 960px) {
+  .cultural {
+    display: none !important;
+  }
 }
 @media (max-width: 1260px) and (min-width: 960px) {
   .des.px-10 {
@@ -442,7 +476,16 @@ body {
     padding-left: 5px !important;
   }
 }
-
+@media (max-width: 1160px) and (min-width: 960px) {
+  .awolowo-p.mt-2,
+  .awolowo-p {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .awolowo-h2 {
+    font-size: 15px;
+  }
+}
 @media (max-width: 1400px) {
   .ratings-section {
     min-height: 250px;
@@ -637,7 +680,9 @@ body {
   .executives-hero-section.px-13,
   .news-hero-section.px-15,
   .px-15.mda-row,
-  .mda-education-main.px-15 {
+  .mda-education-main.px-15,
+  .investment-video.px-15,
+  .bg-investment.py-10.px-13 {
     padding-right: 16px !important;
     padding-left: 16px !important;
   }
@@ -659,6 +704,18 @@ body {
   .projects-img-description h1 {
     font-size: 15px !important;
   }
+  .invest-icon {
+    display: none;
+  }
+  .invest-h1 {
+    text-align: center;
+  }
+  .invest-row {
+    display: none !important;
+  }
+  .bubb.text-h2 {
+    font-size: 30px !important;
+  }
 }
 @media (max-width: 550px) {
   .bottomcarousel-details h2.text-h3 {
@@ -666,6 +723,9 @@ body {
   }
   .news2-top {
     top: 45%;
+  }
+  .bubb-p {
+    font-size: 15px !important;
   }
 }
 @media (max-width: 525px) {
@@ -732,6 +792,9 @@ body {
   .news2-top {
     top: 35%;
     left: 20px;
+  }
+  .invest-section-main {
+    padding-top: 50px !important;
   }
 }
 @media (max-width: 500px) {

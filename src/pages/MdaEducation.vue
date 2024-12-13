@@ -55,22 +55,40 @@
       <v-row class="align-center">
         <v-col cols="12" md="6">
           <div>
-            <img
-              width="100%"
-              class="rounded-xl"
-              src="/assets/girl.png"
-              alt=""
-            />
+            <img width="100%" src="/assets/girl.png" alt="" />
           </div>
         </v-col>
         <v-col cols="12" md="6">
           <div>
-            <p style="font-size: 18px" class="text">
-              To develop a purposeful, inclusive and engaging education system
-              that produces successful, inspired, self-motivated lifelong
-              learners, who possess the skills and knowledge necessary to be
-              productive contributors to the State and the changing world
+            <h3 class="purpose">
+              Developing a Purposeful, Inclusive, and Engaging Education System
+            </h3>
+            <p style="font-size: 18px" class="awolowo-p">
+              Education is the cornerstone of any society, shaping the
+              individuals who will lead, innovate, and contribute to its
+              development. A purposeful, inclusive, and engaging education
+              system is not merely a collection of schools and curricula but a
+              dynamic framework that fosters lifelong learning, critical
+              thinking, and adaptability. It aims to empower learners with the
+              skills and knowledge needed to thrive as productive contributors
+              to their communities, their state, and the rapidly changing world.
             </p>
+            <div class="cultural">
+              <h2 class="mt-3">Purposeful Education</h2>
+              <p>
+                A purposeful education system is built on clear objectives that
+                address both individual and societal needs. It aligns with a
+                vision that prioritizes not only academic excellence but also
+                personal development, ethical values, and social responsibility.
+                It recognizes that education is not a one-size-fits-all
+                endeavor; instead, it emphasizes relevance by integrating
+                practical knowledge and real-world skills into the curriculum.
+                This ensures that learners are equipped to solve modern
+                challenges, navigate complex global issues, and seize emerging
+                opportunities in fields such as technology, healthcare, and
+                entrepreneurship.
+              </p>
+            </div>
           </div>
         </v-col>
       </v-row>
