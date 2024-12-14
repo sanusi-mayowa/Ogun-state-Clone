@@ -2,8 +2,8 @@
   <div class="laptopnav">
     <v-app-bar class="bg-white-lighten-4 navbar px-8" flat>
       <div class="d-flex justify-space-between w-100 align-center">
-        <div class="logocursor-pointer">
-          <img src="/assets/logo.png" width="150" alt="" />
+        <div class="logocursor-pointer" @click="navigateToHome">
+          <img src="/assets/logo.png" width="150" alt="Logo" />
         </div>
         <div>
           <v-list class="d-flex align-center bg-transparent ga-3">
@@ -54,8 +54,8 @@
       <div
         class="small-nav d-flex align-center justify-space-between w-100 px-8"
       >
-        <div class="logo cursor-pointer">
-          <img src="/assets/logo.png" class="mt-2" :width="150" />
+        <div class="logocursor-pointer" @click="navigateToHome">
+          <img src="/assets/logo.png" width="150" alt="Logo" />
         </div>
         <div>
           <v-btn
@@ -176,6 +176,9 @@ export default {
   methods: {
     toggleNav() {
       this.navDrawer = !this.navDrawer;
+    },
+    navigateToHome() {
+      this.$router.push("/");
     },
   },
 };
