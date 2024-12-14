@@ -11,7 +11,6 @@
           </li>
         </ul>
       </v-col>
-
       <v-col cols="12" md="8" class="position-relative">
         <v-row>
           <v-col cols="6">
@@ -56,7 +55,6 @@
     </v-row>
   </div>
 </template>
-
 <script>
 export default {
   data() {

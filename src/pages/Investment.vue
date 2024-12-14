@@ -175,6 +175,25 @@
     <section class="industrial-hub px-13 pt-10">
       <InvestmentSection />
     </section>
+    <section class="industrial-hub px-13 mt-10">
+      <h2 class="text-primary mb-5 ml-3">The State Key Sectors</h2>
+      <v-row>
+        <v-col
+          cols="12"
+          md="4"
+          sm="6"
+          v-for="keysector in keysectors"
+          :key="keysector"
+        >
+          <div class="position-relative">
+            <img width="100%" :src="keysector.img" alt="" />
+            <v-card class="bg-white px-5 py-3">
+              <h2 class="text-primary">{{ keysector.text }}</h2>
+            </v-card>
+          </div>
+        </v-col>
+      </v-row>
+    </section>
   </v-main>
 </template>
 <script>
@@ -193,6 +212,18 @@ export default {
         { id: 2, text: "Opportunities", to: "opportunities" },
         { id: 3, text: "Key sector", to: "sectors" },
         { id: 4, text: "Process", to: "process" },
+      ],
+      keysectors: [
+        { id: 1, img: "/assets/keysector1.png", text: "Agriculture" },
+        {
+          id: 2,
+          img: "/assets/keysector2.png",
+          text: "Manufacturing and Industry",
+        },
+        { id: 3, img: "/assets/keysector3.png", text: "Transportation" },
+        { id: 4, img: "/assets/keysector4.png", text: "Education" },
+        { id: 5, img: "/assets/keysector5.png", text: "Infrastructure" },
+        { id: 6, img: "/assets/keysector6.png", text: "Health care  " },
       ],
     };
   },
