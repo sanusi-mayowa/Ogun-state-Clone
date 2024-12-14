@@ -132,7 +132,7 @@
       <section class="mt-16 video-section bg-white text-center pt-8 pb-8">
         <div class="video-container">
           <iframe
-            src="https://www.youtube.com/embed/cuFzeeWySQo"
+            src="https://www.youtube.com/embed/iw9LC2Hetg8"
             title="Governor's Projects in Ogun State"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -172,10 +172,18 @@
         </v-col>
       </v-row>
     </section>
+    <section class="industrial-hub px-13 pt-10">
+      <InvestmentSection />
+    </section>
   </v-main>
 </template>
 <script>
+import InvestmentSection from "@/components/Investmentsection.vue";
 export default {
+  name: "InvestmantPage",
+  components: {
+    InvestmentSection,
+  },
   data() {
     return {
       navDrawer: false,

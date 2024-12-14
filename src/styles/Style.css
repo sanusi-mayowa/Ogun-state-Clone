@@ -641,7 +641,12 @@ body {
     margin-left: 5px !important;
     margin-right: 5px !important;
   }
-  
+  .px-11.bg-history,
+  .speech.px-13,
+  .inner-finacial.px-13 {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
   .ratings-section {
     background: url("/assets/ratings-mobile.png") no-repeat center center;
     height: 100vh;
@@ -668,7 +673,8 @@ body {
   .px-15.mda-row,
   .mda-education-main.px-15,
   .investment-video.px-15,
-  .bg-investment.py-10.px-13 {
+  .bg-investment.py-10.px-13,
+  .industrial-hub.px-13 {
     padding-right: 16px !important;
     padding-left: 16px !important;
   }
