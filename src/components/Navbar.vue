@@ -54,7 +54,7 @@
       <div
         class="small-nav d-flex align-center justify-space-between w-100 px-8"
       >
-        <div class="logocursor-pointer" @click="navigateToHome">
+        <div class="logo cursor-pointer" @click="navigateToHome">
           <img src="/assets/logo.png" width="150" alt="Logo" />
         </div>
         <div>
