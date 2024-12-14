@@ -2,7 +2,7 @@
   <div class="laptopnav">
     <v-app-bar class="bg-white-lighten-4 navbar px-8" flat>
       <div class="d-flex justify-space-between w-100 align-center">
-        <div class="logocursor-pointer" @click="navigateToHome">
+        <div class="logo cursor-pointer" @click="navigateToHome">
           <img src="/assets/logo.png" width="150" alt="Logo" />
         </div>
         <div>
