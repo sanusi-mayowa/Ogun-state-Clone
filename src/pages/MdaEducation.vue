@@ -52,18 +52,22 @@
       </p>
     </div>
     <div class="mt-10">
-      <v-row class="align-center">
-        <v-col cols="12" md="6">
-          <div>
-            <img width="100%" src="/assets/girl.png" alt="" />
+      <v-row class="align-stretch">
+        <v-col cols="12" md="6" class="d-flex justify-center align-center">
+          <div style="height: 100%; width: 100%">
+            <img
+              style="height: 100%; width: 100%; object-fit: cover"
+              src="/assets/girl.png"
+              alt=""
+            />
           </div>
         </v-col>
-        <v-col cols="12" md="6">
-          <div>
+        <v-col cols="12" md="6" class="d-flex flex-column justify-center">
+          <div style="height: 100%">
             <h3 class="purpose">
               Developing a Purposeful, Inclusive, and Engaging Education System
             </h3>
-            <p style="font-size: 18px" class="awolowo-p">
+            <p class="paragraph mt-2">
               Education is the cornerstone of any society, shaping the
               individuals who will lead, innovate, and contribute to its
               development. A purposeful, inclusive, and engaging education
@@ -73,22 +77,30 @@
               skills and knowledge needed to thrive as productive contributors
               to their communities, their state, and the rapidly changing world.
             </p>
-            <div class="cultural">
-              <h2 class="mt-3">Purposeful Education</h2>
-              <p>
-                A purposeful education system is built on clear objectives that
-                address both individual and societal needs. It aligns with a
-                vision that prioritizes not only academic excellence but also
-                personal development, ethical values, and social responsibility.
-                It recognizes that education is not a one-size-fits-all
-                endeavor; instead, it emphasizes relevance by integrating
-                practical knowledge and real-world skills into the curriculum.
-                This ensures that learners are equipped to solve modern
-                challenges, navigate complex global issues, and seize emerging
-                opportunities in fields such as technology, healthcare, and
-                entrepreneurship.
-              </p>
-            </div>
+            <h2 class="mt-3">Purposeful Education</h2>
+            <p class="paragraph mt-2">
+              A purposeful education system is built on clear objectives that
+              address both individual and societal needs. It aligns with a
+              vision that prioritizes not only academic excellence but also
+              personal development, ethical values, and social responsibility.
+              It recognizes that education is not a one-size-fits-all endeavor;
+              instead, it emphasizes relevance by integrating practical
+              knowledge and real-world skills into the curriculum. This ensures
+              that learners are equipped to solve modern challenges, navigate
+              complex global issues, and seize emerging opportunities in fields
+              such as technology, healthcare, and entrepreneurship.
+            </p>
+            <h3 class="mt-3">Cultivating Skills for a Changing World</h3>
+            <p class="paragraph mt-2">
+              The modern world demands individuals who can adapt to constant
+              change. A purposeful education system emphasizes critical
+              thinking, problem-solving, communication, and digital literacy as
+              core competencies. By integrating these skills into the
+              curriculum, students become prepared for the demands of the
+              21st-century workforce. Additionally, fostering global awareness
+              and cultural sensitivity ensures that learners are not only
+              capable of contributing locally but also globally.
+            </p>
           </div>
         </v-col>
       </v-row>
@@ -125,31 +137,79 @@
         </v-col>
       </v-row>
     </div>
-    <div class="meet-commissioner mt-10">
+    <div class="meet-commissioner mt-10 pb-16">
       <h1 class="text-center">Meet the Commissioner</h1>
       <p class="mt-2 text-center">Ministry of Education Science & Technology</p>
       <div class="mt-10">
-        <v-row class="justify-space-between">
-          <v-col cols="12" md="6">
-            <div class="mt-10">
-              <p>
-                Professor Abayomi Adelaja Arigbabu is the Commissioner for
-                Education, Science, and Technology in Ogun State, Nigeria.
-                Formerly Vice-Chancellor of Tai Solarin University of Education,
-                he holds B.Sc. and M.Sc. degrees in Mathematics from the
-                University of Lagos and a Ph.D. in Mathematics Education from
-                the University of South Africa. With over three decades in
-                strategic pedagogical planning, he has numerous academic
-                publications and serves as an external examiner for doctoral
-                theses and postgraduate programs nationally and internationally
+        <v-row class="align-stretch">
+          <v-col cols="12" md="6" class="d-flex flex-column justify-center">
+            <div style="height: 100%">
+              <p class="paragraph">
+                <span class="highlight"
+                  >Professor Abayomi Adelaja Arigbabu</span
+                >
+                is a distinguished academic and administrator currently serving
+                as the
+                <span class="highlight"
+                  >Commissioner for Education, Science, and Technology in Ogun
+                  State, Nigeria</span
+                >. A renowned figure in the field of Mathematics Education,
+                Professor Arigbabu has dedicated over three decades to advancing
+                pedagogy, research, and educational administration.
+              </p>
+              <p class="mt-3">
+                Born and raised in Nigeria, Professor Arigbabu earned his B.Sc.
+                and M.Sc. degrees in Mathematics from the University of Lagos,
+                one of Nigeria's most prestigious institutions. His academic
+                journey culminated in a Ph.D. in Mathematics Education from the
+                University of South Africa, a testament to his commitment to
+                bridging theory and practice in education.
+              </p>
+              <p class="mt-3 paragraph">
+                Prior to his appointment as Commissioner, he served as the
+                Vice-Chancellor of the Tai Solarin University of Education
+                (TASUED), the first specialized university of education in
+                Nigeria. Under his leadership, TASUED experienced significant
+                growth in academic standards, research output, and
+                infrastructural development.
+              </p>
+              <p class="mt-3 paragraph">
+                Professor Arigbabu has made substantial contributions to
+                academia through his numerous publications in peer-reviewed
+                journals. His research interests span mathematics education,
+                curriculum development, and teacher training. A passionate
+                advocate for educational excellence, he has presented papers at
+                various international conferences and continues to mentor
+                upcoming scholars in the field.
+              </p>
+              <p class="mt-3 paragraph">
+                His expertise extends beyond Nigeria, as he serves as an
+                external examiner for doctoral theses and postgraduate programs
+                across Africa and beyond, further solidifying his reputation as
+                a global authority in mathematics education.
+              </p>
+              <p class="mt-3 paragraph">
+                As Commissioner for Education, Science, and Technology,
+                Professor Arigbabu is committed to fostering innovation,
+                improving STEM education, and ensuring that Ogun State remains a
+                hub for academic and technological advancements. Through
+                strategic policymaking and collaboration with stakeholders, he
+                is spearheading initiatives to equip students with 21st-century
+                skills and promote sustainable development in the region.
+              </p>
+              <p class="mt-3 paragraph">
+                In addition to his professional accomplishments, Professor
+                Arigbabu is known for his humility, dedication to community
+                service, and unwavering passion for empowering future
+                generations through education.
               </p>
             </div>
           </v-col>
-          <v-col cols="12" md="6">
-            <div>
+          <v-col cols="12" md="6" class="d-flex justify-center align-center">
+            <div style="height: 100%; width: 100%">
               <img
-                style="height: 400px; width: 100%; object-fit: contain"
                 src="/assets/mda-executivesco.png"
+                style="height: 100%; width: 100%; object-fit: cover"
                 alt=""
               />
               <div class="text-center mt-3">
@@ -205,13 +265,19 @@ export default {
 };
 </script>
 <style scoped>
+.paragraph {
+  font-size: 16px;
+  text-align: justify;
+}
+.highlight {
+  font-weight: bold;
+}
 .video-container {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
   overflow: hidden;
 }
-
 .video-container iframe {
   position: absolute;
   top: 0;
