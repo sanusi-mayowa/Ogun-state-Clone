@@ -172,10 +172,10 @@
         </v-col>
       </v-row>
     </section>
-    <section class="industrial-hub px-13 pt-10">
+    <section class="industrial-hub px-13 pt-10" id="opportunities">
       <InvestmentSection />
     </section>
-    <section class="industrial-hub px-13 mt-10">
+    <section class="industrial-hub px-13 mt-10" id="sector">
       <h2 class="text-primary mb-5 ml-3">The State Key Sectors</h2>
       <v-row>
         <v-col
@@ -187,8 +187,16 @@
         >
           <div class="position-relative">
             <img width="100%" :src="keysector.img" alt="" />
-            <v-card class="bg-white px-5 py-3">
-              <h2 class="text-primary">{{ keysector.text }}</h2>
+            <v-card
+              class="bg-white px-5 py-3 position-absolute w-75 keysector-description"
+              flat
+            >
+              <p
+                class="text-primary text-center"
+                style="font-weight: 500; font-size: 18px"
+              >
+                {{ keysector.text }}
+              </p>
             </v-card>
           </div>
         </v-col>
@@ -255,5 +263,9 @@ export default {
   width: 100%;
   height: 100%;
   border: none;
+}
+.keysector-description.v-card {
+  border-radius: 0 !important;
+  bottom: 30px;
 }
 </style>
