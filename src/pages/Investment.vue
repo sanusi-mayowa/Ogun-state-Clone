@@ -2,8 +2,8 @@
   <div class="laptopnav">
     <v-app-bar class="bg-white-lighten-4 navbar px-8" flat>
       <div class="d-flex justify-space-between w-100 align-center">
-        <div class="logocursor-pointer">
-          <img src="/assets/logo.png" width="150" alt="" />
+        <div class="logo cursor-pointer" @click="navigateToHome">
+          <img src="/assets/logo.png" width="150" alt="Logo" />
         </div>
         <div>
           <v-list class="d-flex align-center bg-transparent ga-3">
@@ -320,6 +320,9 @@ export default {
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
+    },
+    navigateToHome() {
+      this.$router.push("/");
     },
   },
 };
