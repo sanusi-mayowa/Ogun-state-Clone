@@ -1,7 +1,7 @@
 <template>
   <section class="bg-white mt-9 px-12 w-100 ex-main">
     <div class="executives-main">
-      <div class="d-flex align-center justify-space-between">
+      <div class="d-flex align-center px-6 justify-space-between">
         <div>
           <p class="text-primary meet" style="font-weight: 600">
             Meet Our Executives
@@ -15,9 +15,11 @@
             color="green-darken-1"
           >
             View More
-            <span
-              ><i class="bi bi-arrow-right text-red mt-1 ml-1 d-block"></i
-            ></span>
+            <span>
+              <i
+                class="bi bi-arrow-right text-red mt-1 ml-1 d-block btn-icon"
+              ></i>
+            </span>
           </v-btn>
         </div>
       </div>
@@ -81,3 +83,12 @@ export default {
   },
 };
 </script>
+<style scoped>
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.v-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+</style>

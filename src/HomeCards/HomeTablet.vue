@@ -10,7 +10,8 @@
         site of Ofada rice production.
       </p>
       <v-btn
-        class="text-primary d-block mt-5 text-capitalize font-weight-bold"
+        class="text-primary mt-5 text-capitalize font-weight-bold"
+        to="/mda"
         flat
         >Ogun State MDAs</v-btn
       >

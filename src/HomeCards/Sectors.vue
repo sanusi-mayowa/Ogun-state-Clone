@@ -1,6 +1,6 @@
 <template>
   <div class="sectors-main bg-white mt-9 px-12 w-100">
-    <p class="text-primary meet" style="font-weight: 600">
+    <p class="text-primary meet ml-3" style="font-weight: 600">
       Meet Our Executives
     </p>
     <div>
