@@ -87,7 +87,6 @@ export default {
 .btn-icon {
   transition: transform 0.3s ease;
 }
-
 .v-btn:hover .btn-icon {
   transform: translateX(5px);
 }

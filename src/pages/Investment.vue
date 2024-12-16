@@ -201,15 +201,68 @@
           </div>
         </v-col>
       </v-row>
+      <div class="investment-process">
+        <div class="text-center mt-16">
+          <h2>INVESTMENT PROCESS</h2>
+          <p class="mt-5 mb-16">
+            Do business with Ogun State at the comfort of your homes and offices
+            with peace of mind
+          </p>
+        </div>
+        <div class="open-government-row mt-10">
+          <v-row>
+            <v-col
+              cols="12"
+              md="3"
+              sm="6"
+              v-for="(investmentProcess, index) in investmentProcessS"
+              :key="investmentProcess"
+              class="d-flex align-center justify-center position-relative"
+              :class="{ 'third-column-2': index === 2 }"
+            >
+              <div class="position-relative w-100">
+                <img
+                  width="100%"
+                  height="100%"
+                  src="/assets/investment-process.png"
+                  alt=""
+                  class="rounded-xl"
+                />
+              </div>
+              <div
+                class="open-goverment-description position-absolute d-flex flex-column align-center justify-center"
+              >
+                <img
+                  width="50"
+                  class="rounded-lg"
+                  :src="investmentProcess.icon"
+                  alt=""
+                />
+                <span
+                  style="font-size: 19px; text-transform: capitalize"
+                  class="d-block mt-2 text-white px-10 text-center des`"
+                  >{{ investmentProcess.title }}</span
+                >
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+      </div>
+    </section>
+    <section class="mt-16">
+      <Contact />
     </section>
   </v-main>
 </template>
 <script>
 import InvestmentSection from "@/components/Investmentsection.vue";
+import Contact from "@/components/Contact.vue";
+
 export default {
   name: "InvestmantPage",
   components: {
     InvestmentSection,
+    Contact,
   },
   data() {
     return {
@@ -232,6 +285,29 @@ export default {
         { id: 4, img: "/assets/keysector4.png", text: "Education" },
         { id: 5, img: "/assets/keysector5.png", text: "Infrastructure" },
         { id: 6, img: "/assets/keysector6.png", text: "Health care  " },
+      ],
+      investmentProcessS: [
+        {
+          id: 1,
+          icon: "/assets/icon1.png",
+          title: "Process with Bureau of Land and Survey",
+        },
+        {
+          id: 2,
+          icon: "/assets/icon2.png",
+          title: "Process with the Ministry of Agriculture",
+        },
+        {
+          id: 3,
+          icon: "/assets/icon3.png",
+          title:
+            "Process with the Ministry of Physical Planning and Urban development",
+        },
+        {
+          id: 4,
+          icon: "/assets/icon4.png",
+          title: "Process with the Ministry of Environment",
+        },
       ],
     };
   },
@@ -267,5 +343,8 @@ export default {
 .keysector-description.v-card {
   border-radius: 0 !important;
   bottom: 30px;
+}
+.third-column-2 .open-goverment-description {
+  margin-top: 30px;
 }
 </style>
