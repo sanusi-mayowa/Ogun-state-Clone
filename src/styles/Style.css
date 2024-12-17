@@ -65,6 +65,7 @@ body {
   height: 100vh !important;
   border: none !important;
   background: #fff !important;
+  position: fixed !important;
 }
 .v-navigation-drawer__scrim {
   background: transparent !important;
@@ -79,6 +80,7 @@ body {
   right: 0;
   margin: auto;
   position: fixed !important;
+  z-index: 9999;
 }
 .home .v-window__controls .v-btn--icon.v-btn--size-default {
   background: #2c9960;
@@ -389,7 +391,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 .mda-education-description .child {
-  z-index: 999 !important;
+  z-index: 99 !important;
   width: 100%;
   max-width: 1000px !important;
   margin: 0 auto;

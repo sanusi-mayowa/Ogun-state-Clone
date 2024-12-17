@@ -35,7 +35,7 @@
         </v-col>
         <v-col cols="12" md="5">
           <v-row>
-            <v-col cols="12" md="6" sm="6" class="mt-16 footer-list">
+            <v-col cols="6" class="mt-16 footer-list">
               <h5 class="text-h5 ml-4">State</h5>
               <v-list class="bg-transparent">
                 <v-list-item v-for="link in links" :key="link" :to="link.to">
@@ -48,7 +48,7 @@
                 </v-list-item>
               </v-list>
             </v-col>
-            <v-col cols="12" sm="6" md="6" class="mt-16 footer-list">
+            <v-col cols="6" class="mt-16 footer-list">
               <h5 class="text-h5 ml-4">Quick Link</h5>
               <v-list class="bg-transparent">
                 <v-list-item

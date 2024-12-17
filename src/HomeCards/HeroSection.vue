@@ -4,15 +4,20 @@
     interval="7000"
     show-arrows="hover"
     hide-delimiters
-    style="height: 600px !important"
+    style="height: 100vh !important"
     class="home"
   >
     <v-carousel-item
       v-for="topcarousel in Topcarousels"
       :key="topcarousel"
+      style="height: 100vh !important"
       class="position-relative"
     >
-      <img :src="topcarousel.img" alt="" style="width: 100%" />
+      <img
+        :src="topcarousel.img"
+        alt=""
+        style="width: 100%; height: 100vh; object-fit: cover"
+      />
       <div class="carousel-details position-absolute w-50">
         <h1 class="text-white description text-h1 font-weight-bold">
           <span class="d-block">{{ topcarousel.name }} </span>

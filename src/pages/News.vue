@@ -137,7 +137,6 @@
     </div>
   </section>
 </template>
-
 <script>
 import axios from "axios";
 export default {
@@ -150,12 +149,12 @@ export default {
           text: "Sport",
         },
         {
-          id: 1,
-          text: "Sport",
+          id: 2,
+          text: "Politics",
         },
         {
-          id: 1,
-          text: "Sport",
+          id: 3,
+          text: "Health",
         },
       ],
       newsItems: [], // Fetched news articles
@@ -178,20 +177,22 @@ export default {
       this.loading = true;
       try {
         const params = {
-          q: category || "Ogun State",
-          apikey: "1c6c55c29c67e0620172e616ad9c5ec2",
-          language: "en",
+          category: category || "Ogun State", // Default category
+          apiKey: "e7b34c559b2e4fb78810c513ef067c5d", // Replace with your actual API key
           page: this.currentPage,
+          pageSize: this.pageSize, // Set the page size to 6
         };
 
-        const response = await axios.get("https://api.mediastack.com/v1/news", {
-          params,
-        });
+        const response = await axios.get(
+          "https://newsapi.org/v2/top-headlines",
+          {
+            params,
+          }
+        );
 
-        if (response.data && response.data.results) {
-          this.newsItems = response.data.results;
-          this.totalResults =
-            response.data.totalResults || this.newsItems.length * 5;
+        if (response.data && response.data.articles) {
+          this.newsItems = response.data.articles;
+          this.totalResults = response.data.totalResults || 0;
         } else {
           this.newsItems = [];
           this.totalResults = 0;
@@ -211,27 +212,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.news-items img {
-  object-fit: cover;
-  height: 300px !important;
-}
-
-.news-title {
-  width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.news-description {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-</style>

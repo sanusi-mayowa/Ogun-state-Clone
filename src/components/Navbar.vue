@@ -23,7 +23,7 @@
         </div>
         <div class="d-flex align-center justify-space-between ga-10">
           <div>
-            <!-- <Search /> -->
+            <Search />
           </div>
           <v-menu transition="slide-x-transition" flat>
             <template v-slot:activator="{ props }">
@@ -90,6 +90,9 @@
               </v-list-item-content>
             </v-list-item>
           </v-list>
+          <div>
+            <Search />
+          </div>
           <v-menu transition="slide-x-transition" flat>
             <template v-slot:activator="{ props }">
               <v-btn class="bg-primary rounded-pill" v-bind="props">

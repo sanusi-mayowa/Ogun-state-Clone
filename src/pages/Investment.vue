@@ -82,7 +82,7 @@
             </p>
             <span
               style="background: #809c8d"
-              class="px-3 py-2 rounded-pill invest-icon"
+              class="px-3 py-2 cursor-pointer rounded-pill invest-icon"
               ><i class="bi bi-arrow-right-short"></i
             ></span>
           </div>
@@ -201,7 +201,7 @@
           </div>
         </v-col>
       </v-row>
-      <div class="investment-process">
+      <div class="investment-process" id="process">
         <div class="text-center mt-16">
           <h2>INVESTMENT PROCESS</h2>
           <p class="mt-5 mb-16">
@@ -249,7 +249,7 @@
         </div>
       </div>
     </section>
-    <section class="mt-16">
+    <section class="mt-16" id="contact">
       <Contact />
     </section>
   </v-main>
