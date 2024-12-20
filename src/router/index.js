@@ -4,7 +4,7 @@ import InvestMentLayout from "@/Layouts/InvestMentLayout.vue";
 import HomePage from "@/pages/Home.vue";
 import InvestmentPage from "@/pages/Investment.vue";
 import NewsPage from "@/pages/News.vue";
-import NewsDetail from "@/pages/NewsDetail.vue";
+import NewsDetail from "@/pages/NewsDetail";
 import AboutPage from "@/pages/About.vue";
 import GovernmentPage from "@/pages/Government.vue";
 import MdaPage from "@/pages/Mda.vue";
@@ -54,6 +54,18 @@ const routes = [
         path: "",
         name: "NewsPage",
         component: NewsPage,
+      },
+    ],
+  },
+  {
+    path: "/news/:url",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "/news/:url",
+        name: "NewsDetail",
+        component: NewsDetail,
+        props: true,
       },
     ],
   },

@@ -1,11 +1,19 @@
 <template>
   <section class="new-hero">
+    <!-- Loading Overlay -->
+    <div v-if="loading" class="loading-overlay d-flex align-center">
+      <v-progress-circular
+        indeterminate
+        color="primary"
+        size="64"
+      ></v-progress-circular>
+      <p class="loading-text">Fetching News...</p>
+    </div>
     <div class="text-center news">
       <h2 class="text-primary">News</h2>
       <p>Explore recent developments, News, in Ogun State</p>
       <div class="border-black border mt-3 w-100"></div>
     </div>
-
     <div class="news-hero-section px-15">
       <div class="update d-flex align-center justify-space-between w-100 mt-5">
         <div>
@@ -15,62 +23,48 @@
           <v-menu transition="slide-y-transition" flat>
             <template v-slot:activator="{ props }">
               <v-btn class="bg-primary select rounded-pill" v-bind="props">
-                Categories
+                {{ selectedCategory || "Categories" }}
               </v-btn>
             </template>
             <v-list flat>
               <v-list-item
                 class="text-black"
-                v-for="option in options"
-                :key="option"
-                @click="setCategory(option)"
+                v-for="category in options"
+                :key="category.text"
+                @click="changeCategory(category)"
               >
-                <v-list-item-title class="text-black text-center">
-                  {{ option.text }}
-                </v-list-item-title>
+                <v-list-item-title class="text-black text-center">{{
+                  category.text
+                }}</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
         </div>
       </div>
 
-      <!-- Loading State -->
-      <div
-        v-if="loading"
-        class="d-flex justify-center ga-10 align-center"
-        style="height: 300px"
-      >
-        <v-progress-circular
-          indeterminate
-          color="primary"
-        ></v-progress-circular>
-        <div class="font-weight-bold">Fetching News</div>
-      </div>
+      <!-- Loading state -->
 
-      <!-- Hero Section -->
-      <div
-        v-else-if="newsItems.length > 0"
-        class="news-hero-section-inner position-relative mt-5"
-      >
+      <!-- Content after data is loaded -->
+      <div class="news-hero-section-inner position-relative mt-5">
         <img
-          :src="newsItems[0].urlToImage || '/assets/newssection.png'"
+          src="/assets/newssection.png"
           width="100%"
           class="rounded-xl"
-          alt="News Hero"
+          alt=""
         />
         <div class="news-hero-section-description position-absolute text-white">
-          <span class="text-grey">
-            {{
-              newsItems[0].publishedAt
-                ? new Date(newsItems[0].publishedAt).toLocaleDateString()
-                : "Unknown Date"
-            }}
-          </span>
+          <span class="text-grey">March 29, 2023</span>
           <h1 class="w-75 mt-2">
-            {{ newsItems[0].title || "No Title Available" }}
+            Replacing Stomach Infrastructure with Project Infrastructure,
+            Sujimoto Congratulates Prince Dapo Abiodun, Ogun State Governor
+            Re-elect
           </h1>
           <p class="mt-3">
-            {{ newsItems[0].description || "No description available." }}
+            The journey to Prince Dapo Abiodun’s re-election as Governor of Ogun
+            State was a tumultuous one, marked by internal and external
+            political strife. ‘However, despite the challenges, I was eager to
+            make the trip down to Ogun State to congratulate my egbon and mentor
+            in person.’
           </p>
         </div>
       </div>
@@ -93,22 +87,14 @@
               :src="item.urlToImage || '/assets/news.png'"
               width="100%"
               height="100%"
-              alt="News Image"
+              alt=""
             />
             <div class="news-details px-5">
-              <span class="date text-grey my-2 d-block">
-                {{
-                  item.publishedAt
-                    ? new Date(item.publishedAt).toLocaleDateString()
-                    : "Unknown Date"
-                }}
-              </span>
-              <h1 class="news-title mb-2">
-                {{ item.title || "Untitled News" }}
-              </h1>
-              <p class="news-description">
-                {{ item.description || "No description available." }}
-              </p>
+              <span class="date text-grey my-2 d-block">{{
+                new Date(item.publishedAt).toLocaleDateString()
+              }}</span>
+              <h1 class="news-title mb-2">{{ item.title }}</h1>
+              <p class="news-description">{{ item.description }}</p>
               <div class="route mt-2">
                 <router-link
                   :to="{ name: 'NewsDetail', params: { url: item.url } }"
@@ -125,11 +111,9 @@
         </v-col>
       </v-row>
 
-      <!-- Pagination -->
       <v-pagination
-        v-if="totalResults > 0"
         v-model="currentPage"
-        :length="Math.ceil(totalResults / 6)"
+        :length="Math.ceil(totalResults / pageSize)"
         :total-visible="5"
         @input="fetchNews"
         class="d-flex justify-center mt-5"
@@ -139,76 +123,98 @@
 </template>
 <script>
 import axios from "axios";
+import data from "@/data.json";
+
 export default {
   name: "NewsPage",
   data() {
     return {
       options: [
-        {
-          id: 1,
-          text: "Sport",
-        },
-        {
-          id: 2,
-          text: "Politics",
-        },
-        {
-          id: 3,
-          text: "Health",
-        },
+        { text: "Ogun State", query: "Ogun State" },
+        { text: "National", query: "Nigeria" },
+        { text: "International", query: "World" },
       ],
-      newsItems: [], // Fetched news articles
-      loading: true, // Loading state
-      currentPage: 1, // Current page
-      totalResults: 0, // Total results from API
-      pageSize: 6, // Number of articles per page
+      selectedCategory: null,
+      newsItems: [],
+      loading: true,
+      currentPage: 1,
+      totalResults: 0,
+      pageSize: 6,
     };
   },
   created() {
-    this.fetchNews(); // Fetch news on page load
-  },
-  watch: {
-    currentPage(newPage) {
-      this.fetchNews(); // Refetch news when page changes
-    },
+    this.fetchNews();
   },
   methods: {
-    async fetchNews(category = null) {
+    async fetchNews() {
       this.loading = true;
       try {
-        const params = {
-          category: category || "Ogun State", // Default category
-          apiKey: "e7b34c559b2e4fb78810c513ef067c5d", // Replace with your actual API key
-          page: this.currentPage,
-          pageSize: this.pageSize, // Set the page size to 6
-        };
-
-        const response = await axios.get(
-          "https://newsapi.org/v2/top-headlines",
-          {
-            params,
-          }
-        );
-
-        if (response.data && response.data.articles) {
-          this.newsItems = response.data.articles;
-          this.totalResults = response.data.totalResults || 0;
-        } else {
-          this.newsItems = [];
-          this.totalResults = 0;
-        }
+        const response = await axios.get("https://newsapi.org/v2/everything", {
+          params: {
+            q: this.selectedCategory || "Ogun State",
+            apiKey: "e7b34c559b2e4fb78810c513ef067c5d",
+            language: "en",
+            page: this.currentPage,
+            pageSize: this.pageSize,
+          },
+        });
+        this.newsItems = response.data.articles;
+        this.totalResults = response.data.totalResults;
+        this.loading = false;
       } catch (error) {
         console.error("Error fetching news:", error);
-        this.newsItems = [];
-        this.totalResults = 0;
-      } finally {
         this.loading = false;
       }
     },
-    setCategory(option) {
-      this.currentPage = 1; // Reset to the first page
-      this.fetchNews(option.text); // Fetch news by category
+    changeCategory(category) {
+      this.selectedCategory = category.text;
+      this.fetchNews();
     },
   },
 };
 </script>
+
+<style scoped>
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+.news-items img {
+  object-fit: cover;
+  height: 300px !important;
+}
+
+.news-title {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
